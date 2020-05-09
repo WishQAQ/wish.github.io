@@ -110,4 +110,53 @@ $(document).ready(function() {
       });
     }
   }
+
+  function textInput (){
+    const teletype = document.getElementById("about_message");
+
+    const telecopy = 'Be steady and well-ordered in your life so that you can be fierce and original in your work.' +
+      '<br />' +
+      '生活中沉稳可靠、井井有条，方能在工作中脱颖而出、不同凡响。' +'<br />'
+    let counter = 0;
+    teletype.removeAttribute("hidden");
+    let bigin = false
+    const timer = setInterval(function () {
+      teletype.innerHTML = telecopy.substr(0, counter) ;
+      counter++;
+      if (counter === telecopy.length + 1) {
+        clearInterval(timer);
+        setTimeout(() =>{
+          dialogueInput()
+          setTimeout(() =>{
+            dialoguecopy = '---- It`s me';
+            dialogueInput()
+          },2000)
+        },500)
+      }
+    }, 45);
+
+  }
+
+  let dialoguecopy = '---- Who??';
+
+  function dialogueInput (){
+    const teletype = document.getElementById("dialogue");
+
+    let counter = 0;
+    teletype.removeAttribute("hidden");
+    const timer = setInterval(function () {
+      teletype.innerHTML = dialoguecopy.substr(0, counter) ;
+      counter++;
+      if (counter === dialoguecopy.length + 1) {
+        clearInterval(timer);
+      }
+    }, 30);
+  }
+
+  setTimeout(() =>{
+    textInput()
+    // dialogueInput()
+  },2000)
+
 });
+

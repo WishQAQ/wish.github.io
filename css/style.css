@@ -1027,6 +1027,46 @@ body {
     display: none;
   }
 }
+#about {
+  min-height: 150px;
+  line-height: 30px;
+}
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+@-webkit-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+@-o-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+#about_info::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+}
 .post-list {
   padding: 0;
 }
